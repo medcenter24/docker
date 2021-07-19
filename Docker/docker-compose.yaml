@@ -1,0 +1,148 @@
+version: '3.9'
+
+services:
+  mc-api-nginx:
+    container_name: mc-api-nginx
+    image: nginx:stable
+    environment:
+      - APP_CONFIG_PATH=/var/www/html/appSettings
+    depends_on:
+      - mc-phpfpm
+    networks:
+      - medcenter24-network
+      - traefik-public
+    volumes:
+      - ..:/var/www/html:cached
+      - ./nginx/api.nginx.conf:/etc/nginx/conf.d/default.conf:cached
+    working_dir: /etc/nginx/conf.d
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mc-api.rule=Host(`api.mc.docker.localhost`)"
+      - "traefik.http.routers.mc-api.entrypoints=http"
+      - "traefik.http.routers.mc-api-secure.entrypoints=https"
+      - "traefik.http.routers.mc-api-secure.rule=Host(`api.mc.docker.localhost`)"
+      - "traefik.http.routers.mc-api-secure.tls=true"
+  mc-backoffice-nginx:
+    container_name: mc-backoffice-nginx
+    image: nginx:stable
+    environment:
+      - APP_CONFIG_PATH=/var/www/html/appSettings
+    depends_on:
+      - mc-phpfpm
+    networks:
+      - medcenter24-network
+      - traefik-public
+    volumes:
+      - ..:/var/www/html:cached
+      - ./nginx/backoffice.nginx.conf:/etc/nginx/conf.d/default.conf:cached
+    working_dir: /etc/nginx/conf.d
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mc-backoffice.rule=Host(`backoffice.mc.docker.localhost`)"
+      - "traefik.http.routers.mc-backoffice.entrypoints=http"
+      - "traefik.http.routers.mc-backoffice-secure.entrypoints=https"
+      - "traefik.http.routers.mc-backoffice-secure.rule=Host(`backoffice.mc.docker.localhost`)"
+      - "traefik.http.routers.mc-backoffice-secure.tls=true"
+#  mc-doctor-nginx:
+#    container_name: mc-doctor-nginx
+#    image: nginx:stable
+#    depends_on:
+#      - mc-phpfpm
+#    networks:
+#      - medcenter24-network
+#      - traefik-public
+#    volumes:
+#      - ..:/var/www/html:cached
+#      - ./nginx/doctor.nginx.conf:/etc/nginx/conf.d/default.conf:cached
+#    working_dir: /etc/nginx/conf.d
+#    labels:
+#      - "traefik.enable=true"
+#      - "traefik.http.routers.mc-doctor.rule=Host(`doctor.mc.docker.localhost`)"
+#      - "traefik.http.routers.mc-doctor.entrypoints=http"
+#      - "traefik.http.routers.mc-doctor-secure.entrypoints=https"
+#      - "traefik.http.routers.mc-doctor-secure.rule=Host(`doctor.mc.docker.localhost`)"
+#      - "traefik.http.routers.mc-doctor-secure.tls=true"
+#  mc-director-nginx:
+#    container_name: mc-director-nginx
+#    image: nginx:stable
+#    depends_on:
+#      - mc-phpfpm
+#    networks:
+#      - medcenter24-network
+#      - traefik-public
+#    volumes:
+#      - ..:/var/www/html:cached
+#      - ./nginx/director.nginx.conf:/etc/nginx/conf.d/default.conf:cached
+#    working_dir: /etc/nginx/conf.d
+#    labels:
+#      - "traefik.enable=true"
+#      - "traefik.http.routers.mc-director.rule=Host(`director.mc.docker.localhost`)"
+#      - "traefik.http.routers.mc-director.entrypoints=http"
+#      - "traefik.http.routers.mc-director-secure.entrypoints=https"
+#      - "traefik.http.routers.mc-director-secure.rule=Host(`director.mc.docker.localhost`)"
+#      - "traefik.http.routers.mc-director-secure.tls=true"
+
+  mc-phpfpm:
+    container_name: mc-phpfpm
+    build:
+      context: ./phpfpm
+    environment:
+      - APP_CONFIG_PATH=/var/www/html/appSettings
+    networks:
+      - medcenter24-network
+    volumes:
+      - ..:/var/www/html:cached
+    working_dir: /var/www/html
+
+  mc-build:
+    container_name: mc-build
+    build:
+      context: ./build
+    networks:
+      - medcenter24-network
+    volumes:
+      - ..:/var/www/html:cached
+    working_dir: /var/www/html
+
+  mc-postgres:
+    image: postgres:13.3
+    container_name: mc-postgres
+#    healthcheck:
+#      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+#      timeout: 45s
+#      interval: 10s
+#      retries: 10
+#    restart: always
+    networks:
+      - medcenter24-network
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+      - APP_DB_USER=docker
+      - APP_DB_PASS=docker
+      - APP_DB_NAME=docker
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/
+    ports:
+      - 5432:5432
+
+  # todo run mails through dev mailhog env?
+#  mail:
+#    image: mailhog/mailhog
+#    container_name: "mail"
+#    logging:
+#      driver: 'none'  # disable saving logs
+#    expose:
+#      - 1025 # smtp server
+#      - 8025 # web ui
+#    networks:
+#      main:
+#        aliases:
+#          - mail
+
+
+networks:
+  medcenter24-network:
+    driver: bridge
+  traefik-public:
+    external: true

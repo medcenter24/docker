@@ -1,0 +1,89 @@
+{
+  "seed": {
+    "identifier": "local",
+    "author": "MedCenter24",
+    "version": "0.1"
+  },
+  "admin": {
+    "email": "admin@example.com",
+    "password": "secret",
+    "name": "Admin"
+  },
+  "configurations": {
+    "global": {
+      "config-path": "./appSettings/config",
+      "config-filename": "generis.conf.php",
+      "env-filename": ".env",
+      "data-path": "./appSettings/data"
+    },
+    "core": {
+      "api_debug"                     : "true",
+      "app_debug"                     : "true",
+      "api_name"                      : "MedCenter 24 API",
+      "api_prefix"                    : "api",
+      "api_strict"                    : "",
+      "api_subtype"                   : "MC24",
+      "api_version"                   : "v1",
+      "app_env"                       : "local",
+      "app_key"                       : "",
+      "app_log_level"                 : "debug",
+      "app_mode"                      : "api+web",
+      "app_url"                       : "https://backoffice.mc.docker.localhost",
+      "broadcast_driver"              : "log",
+      "cache_driver"                  : "file",
+      "cors_allow_origin_director"    : "https://director.mc.docker.localhost",
+      "cors_allow_origin_doctor"      : "https://doctor.mc.docker.localhost",
+      "customer_name"                 : "MedCenter24",
+      "db_connection"                 : "sqlite",
+      "db_database"                   : "pgsql",
+      "db_host"                       : "mc-postgres",
+      "db_port"                       : "5432",
+      "db_username"                   : "docker",
+      "db_password"                   : "docker",
+      "debugbar_enabled"              : "false",
+      "dropbox_backup_app"            : "",
+      "dropbox_backup_key"            : "",
+      "dropbox_backup_root"           : "",
+      "dropbox_backup_secret"         : "",
+      "dropbox_backup_token"          : "",
+      "image_driver"                  : "gd",
+      "mail_driver"                   : "smtp",
+      "mail_encryption"               : "",
+      "mail_host"                     : "",
+      "mail_password"                 : "",
+      "mail_port"                     : "2525",
+      "mail_username"                 : "",
+      "pusher_app_id"                 : "",
+      "pusher_app_key"                : "",
+      "pusher_app_secret"             : "",
+      "queue_driver"                  : "sync",
+      "redis_host"                    : "null",
+      "redis_password"                : "",
+      "redis_port"                    : "6379",
+      "session_driver"                : "file",
+      "log_channel"                   : "single",
+      "slack_webhook_url"             : "",
+      "jwt_blacklist_grace_period"    : 30
+    },
+    "director-gui": {
+      "development": {
+        "apiHost": "https://api.mc.docker.localhost",
+        "projectName": "Medical Center 24 Development",
+        "doctorLink": "https://doctor.mc.docker.localhost"
+      },
+      "production": {
+        "apiHost": "https://api.medcenter24.com",
+        "projectName": "Medical Center 24",
+        "doctorLink": "https://doctor.medcenter24.com"
+      }
+    },
+    "doctor-gui": {
+      "development": {
+        "apiHost": "https://api.mc.docker.localhost"
+      },
+      "production": {
+        "apiHost": "https://api.medcenter24.com"
+      }
+    }
+  }
+}

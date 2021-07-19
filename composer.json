@@ -1,0 +1,23 @@
+{
+  "name": "medcenter24/docker",
+  "description": "Docker Configuration for the MedCenter24 application",
+  "minimum-stability": "dev",
+  "license": "GPL-2.0-only",
+  "authors": [
+    {
+      "name": "Oleksandr Zagovorychev",
+      "email": "zagovorichev@gmail.com"
+    }
+  ],
+  "prefer-stable": true,
+  "require": {
+    "medcenter24/mc-core": "dev-develop",
+    "medcenter24/mc-director-gui": "dev-develop",
+    "medcenter24/mc-doctor-gui": "dev-develop"
+  },
+  "require-dev": {
+  },
+  "config": {
+    "optimize-autoloader": true
+  }
+}
