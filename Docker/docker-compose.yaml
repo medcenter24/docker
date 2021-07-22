@@ -4,8 +4,6 @@ services:
   mc-api-nginx:
     container_name: mc-api-nginx
     image: nginx:stable
-    environment:
-      - APP_CONFIG_PATH=/var/www/html/appSettings
     depends_on:
       - mc-phpfpm
     networks:
@@ -25,8 +23,6 @@ services:
   mc-backoffice-nginx:
     container_name: mc-backoffice-nginx
     image: nginx:stable
-    environment:
-      - APP_CONFIG_PATH=/var/www/html/appSettings
     depends_on:
       - mc-phpfpm
     networks:
@@ -87,7 +83,7 @@ services:
     build:
       context: ./phpfpm
     environment:
-      - APP_CONFIG_PATH=/var/www/html/appSettings
+      - APP_CONFIG_PATH=/var/www/html/appSettings/config/generis.conf.php
     networks:
       - medcenter24-network
     volumes:
@@ -107,12 +103,6 @@ services:
   mc-postgres:
     image: postgres:13.3
     container_name: mc-postgres
-#    healthcheck:
-#      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
-#      timeout: 45s
-#      interval: 10s
-#      retries: 10
-#    restart: always
     networks:
       - medcenter24-network
     environment:
@@ -120,9 +110,10 @@ services:
       - POSTGRES_PASSWORD=password
       - APP_DB_USER=docker
       - APP_DB_PASS=docker
-      - APP_DB_NAME=docker
+      - APP_DB_NAME=mc
     volumes:
       - ./db:/docker-entrypoint-initdb.d/
+      - mc-pg-data:/var/lib/postgresql/data/
     ports:
       - 5432:5432
 
@@ -140,6 +131,8 @@ services:
 #        aliases:
 #          - mail
 
+volumes:
+  mc-pg-data:
 
 networks:
   medcenter24-network:

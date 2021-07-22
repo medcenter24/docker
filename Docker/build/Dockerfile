@@ -17,7 +17,8 @@ RUN docker-php-ext-install pdo && \
     docker-php-ext-install gd && \
     docker-php-ext-install mbstring && \
     docker-php-ext-install exif && \
-    docker-php-ext-install zip
+    docker-php-ext-install zip && \
+    docker-php-ext-install pdo pdo_pgsql pgsql
 
 RUN { \
     echo 'memory_limit=512M'; \
