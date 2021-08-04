@@ -8,7 +8,8 @@ build:
 	docker exec -e APP_CONFIG_PATH=/var/www/html/appSettings/config/generis.conf.php -it mc-build /usr/local/bin/php mcCore/artisan setup:seed /var/www/html/seed.json
 	docker exec -it mc-build chown 1000:1000 -R /var/www/html/appSettings
 	docker exec -it mc-build chmod ugo+xrw -R /var/www/html/appSettings
-	docker exec -it mc-core su - 1000 yarn && su - 1000 yarn run dev
+	docker exec -it mc-build yarn && yarn run dev
+	docker exec -it mc-build chown 1000:1000 -R /var/www/html
 	docker-compose -f ./Docker/docker-compose.yaml down
 
 run:
