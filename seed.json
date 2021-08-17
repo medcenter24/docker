@@ -28,11 +28,11 @@
       "app_key"                       : "",
       "app_log_level"                 : "debug",
       "app_mode"                      : "api+web",
-      "app_url"                       : "https://backoffice.mc.docker.localhost",
+      "app_url"                       : "https://mc-backoffice.docker.localhost",
       "broadcast_driver"              : "log",
       "cache_driver"                  : "file",
-      "cors_allow_origin_director"    : "https://director.mc.docker.localhost",
-      "cors_allow_origin_doctor"      : "https://doctor.mc.docker.localhost",
+      "cors_allow_origin_director"    : "https://mc-director-watch.docker.localhost",
+      "cors_allow_origin_doctor"      : "https://mc-doctor-watch.docker.localhost",
       "customer_name"                 : "MedCenter24",
       "db_connection"                 : "pgsql",
       "db_database"                   : "mc",
@@ -67,9 +67,9 @@
     },
     "director-gui": {
       "development": {
-        "apiHost": "https://api.mc.docker.localhost",
+        "apiHost": "https://mc-api.docker.localhost",
         "projectName": "Medical Center 24 Development",
-        "doctorLink": "https://doctor.mc.docker.localhost"
+        "doctorLink": "https://mc-doctor-watch.docker.localhost"
       },
       "production": {
         "apiHost": "https://api.medcenter24.com",
@@ -79,7 +79,7 @@
     },
     "doctor-gui": {
       "development": {
-        "apiHost": "https://api.mc.docker.localhost"
+        "apiHost": "https://mc-api.docker.localhost"
       },
       "production": {
         "apiHost": "https://api.medcenter24.com"

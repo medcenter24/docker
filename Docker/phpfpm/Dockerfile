@@ -37,6 +37,8 @@ RUN { \
 RUN { \
    echo 'xdebug.mode=debug'; \
    echo 'xdebug.discover_client_host = 1'; \
+    # xdebug.client_host = host.docker.internal \
+    # xdebug.client_port=9003
 } >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 RUN { \
