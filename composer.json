@@ -11,12 +11,14 @@
   ],
   "prefer-stable": true,
   "require": {
+    "php": ">=8.0",
+    "ext-dom": "*",
+    "ext-imagick": "*",
     "medcenter24/mc-core": "dev-develop",
     "medcenter24/mc-director-gui": "dev-develop",
     "medcenter24/mc-doctor-gui": "dev-develop"
   },
   "require-dev": {
-    "ext-imagick": "*",
     "barryvdh/laravel-debugbar": "^3.6",
     "barryvdh/laravel-ide-helper": "^2.10",
     "filp/whoops": "^2.7.1",
