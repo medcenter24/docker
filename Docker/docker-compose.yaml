@@ -152,6 +152,37 @@ services:
       - "traefik.http.routers.mc-director-watch-secure.rule=Host(`mc-director-watch.docker.localhost`)"
       - "traefik.http.routers.mc-director-watch-secure.tls=true"
 
+  mc-doctor-watch:
+    container_name: mc-doctor-watch
+    build:
+      context: ./doctor-dev
+    command: bash -c "yarn && yarn start --public-host http://mc-doctor-watch.docker.localhost --host 0.0.0.0 --disable-host-check"
+    networks:
+      - medcenter24-network
+    volumes:
+      - ..:/var/www/html:cached
+    working_dir: /var/www/html/guiDoctor
+
+  mc-doctor-watch-nginx:
+    container_name: mc-doctor-watch-nginx
+    image: nginx:stable
+    depends_on:
+      - mc-doctor-watch
+    networks:
+      - medcenter24-network
+      - traefik-public
+    volumes:
+      - ..:/var/www/html:cached
+      - ./nginx/doctor-watch.nginx.conf:/etc/nginx/conf.d/default.conf:cached
+    working_dir: /etc/nginx/conf.d
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mc-doctor-watch.rule=Host(`mc-doctor-watch.docker.localhost`)"
+      - "traefik.http.routers.mc-doctor-watch.entrypoints=http"
+      - "traefik.http.routers.mc-doctor-watch-secure.entrypoints=https"
+      - "traefik.http.routers.mc-doctor-watch-secure.rule=Host(`mc-doctor-watch.docker.localhost`)"
+      - "traefik.http.routers.mc-doctor-watch-secure.tls=true"
+
 # todo run mails through dev mailhog env?
 #  mail:
 #    image: mailhog/mailhog
