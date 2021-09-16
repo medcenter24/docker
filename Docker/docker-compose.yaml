@@ -116,8 +116,8 @@ services:
       - APP_DB_PASS=docker
       - APP_DB_NAME=mc
     volumes:
-      - ./db:/docker-entrypoint-initdb.d/
-      - mc-pg-data:/var/lib/postgresql/data/
+      - ./db:/docker-entrypoint-initdb.d
+      - mc-pg-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 

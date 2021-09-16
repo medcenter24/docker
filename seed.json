@@ -46,7 +46,7 @@
       "dropbox_backup_root"           : "",
       "dropbox_backup_secret"         : "",
       "dropbox_backup_token"          : "",
-      "image_driver"                  : "gd",
+      "image_driver"                  : "imagick",
       "mail_driver"                   : "smtp",
       "mail_encryption"               : "",
       "mail_host"                     : "",

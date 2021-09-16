@@ -3,3 +3,6 @@
 /mcCore
 /appSettings
 /settings
+.idea
+/vendor
+/.phpunit.result.cache
