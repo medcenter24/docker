@@ -62,25 +62,26 @@ services:
 #      - "traefik.http.routers.mc-doctor-secure.entrypoints=https"
 #      - "traefik.http.routers.mc-doctor-secure.rule=Host(`doctor.mc.docker.localhost`)"
 #      - "traefik.http.routers.mc-doctor-secure.tls=true"
-#  mc-director-nginx:
-#    container_name: mc-director-nginx
-#    image: nginx:stable
-#    depends_on:
-#      - mc-phpfpm
-#    networks:
-#      - medcenter24-network
-#      - traefik-public
-#    volumes:
-#      - ..:/var/www/html:cached
-#      - ./nginx/director.nginx.conf:/etc/nginx/conf.d/default.conf:cached
-#    working_dir: /etc/nginx/conf.d
-#    labels:
-#      - "traefik.enable=true"
-#      - "traefik.http.routers.mc-director.rule=Host(`director.mc.docker.localhost`)"
-#      - "traefik.http.routers.mc-director.entrypoints=http"
-#      - "traefik.http.routers.mc-director-secure.entrypoints=https"
-#      - "traefik.http.routers.mc-director-secure.rule=Host(`director.mc.docker.localhost`)"
-#      - "traefik.http.routers.mc-director-secure.tls=true"
+
+  mc-director-dist-nginx:
+    container_name: mc-director-dist-nginx
+    image: nginx:stable
+    depends_on:
+      - mc-phpfpm
+    networks:
+      - medcenter24-network
+      - traefik-public
+    volumes:
+      - ..:/var/www/html:cached
+      - ./nginx/director.nginx.conf:/etc/nginx/conf.d/default.conf:cached
+    working_dir: /etc/nginx/conf.d
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mc-director-dist.rule=Host(`director-dist-mc.docker.localhost`)"
+      - "traefik.http.routers.mc-director-dist.entrypoints=http"
+      - "traefik.http.routers.mc-director-dist-secure.entrypoints=https"
+      - "traefik.http.routers.mc-director-dist-secure.rule=Host(`director-dist-mc.docker.localhost`)"
+      - "traefik.http.routers.mc-director-dist-secure.tls=true"
 
   mc-phpfpm:
     container_name: mc-phpfpm
@@ -88,6 +89,8 @@ services:
       context: ./phpfpm
     environment:
       - APP_CONFIG_PATH=/var/www/html/appSettings/config/generis.conf.php
+      - CORS_ALLOW_ORIGIN_DIRECTOR_DEV=https://director-dist-mc.docker.localhost
+      - CORS_ALLOW_ORIGIN_DOCTOR_DEV=https://doctor-dist-mc.docker.localhost
     networks:
       - medcenter24-network
     volumes:

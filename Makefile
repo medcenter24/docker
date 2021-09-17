@@ -17,6 +17,9 @@ build:
 	# stop everything
 	docker-compose -f ./Docker/docker-compose.yaml down
 
+build-director-dist:
+	docker exec -it mc-build yarn --cwd /var/www/html/guiDirector yarn:build:prod:prefer
+
 run:
 	# Run build (for composer update)
 	docker-compose -f ./Docker/docker-compose.yaml up -d mc-build
@@ -32,6 +35,8 @@ run:
 	# Doctor watch
 	docker-compose -f ./Docker/docker-compose.yaml up -d mc-doctor-watch
 	docker-compose -f ./Docker/docker-compose.yaml up -d mc-doctor-watch-nginx
+	# Director Prod Dist
+	docker-compose -f ./Docker/docker-compose.yaml up -d mc-director-dist-nginx
 # todo director & doctor stable prod versions
 # mailhog for docker development
 
