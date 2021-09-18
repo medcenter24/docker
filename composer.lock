@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd901ca34ec876756a713f59d1340021",
+    "content-hash": "4c4c17ee3c6b796e5f03259ed032eb94",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2688,12 +2688,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/medcenter24/mc-core.git",
-                "reference": "34257d810ae696843c7dd3d084ec757c3e89a81e"
+                "reference": "f3e7aca0aa72213400f7bc3c55771db8ff8c867d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/medcenter24/mc-core/zipball/34257d810ae696843c7dd3d084ec757c3e89a81e",
-                "reference": "34257d810ae696843c7dd3d084ec757c3e89a81e",
+                "url": "https://api.github.com/repos/medcenter24/mc-core/zipball/f3e7aca0aa72213400f7bc3c55771db8ff8c867d",
+                "reference": "f3e7aca0aa72213400f7bc3c55771db8ff8c867d",
                 "shasum": ""
             },
             "require": {
@@ -2761,7 +2761,7 @@
                 "issues": "https://github.com/medcenter24/mc-core/issues",
                 "source": "https://github.com/medcenter24/mc-core/tree/develop"
             },
-            "time": "2021-07-22T07:39:00+00:00"
+            "time": "2021-09-17T23:04:57+00:00"
         },
         {
             "name": "medcenter24/mc-director-gui",
@@ -2769,12 +2769,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/medcenter24/mc-director-gui.git",
-                "reference": "53d85f37c96ce75810e10dd1055a54988a7e9911"
+                "reference": "1de1b16750485f04503f5de09d7b1ea51c3c49c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/medcenter24/mc-director-gui/zipball/53d85f37c96ce75810e10dd1055a54988a7e9911",
-                "reference": "53d85f37c96ce75810e10dd1055a54988a7e9911",
+                "url": "https://api.github.com/repos/medcenter24/mc-director-gui/zipball/1de1b16750485f04503f5de09d7b1ea51c3c49c7",
+                "reference": "1de1b16750485f04503f5de09d7b1ea51c3c49c7",
                 "shasum": ""
             },
             "require": {
@@ -2797,7 +2797,7 @@
                 "issues": "https://github.com/medcenter24/mc-director-gui/issues",
                 "source": "https://github.com/medcenter24/mc-director-gui/tree/develop"
             },
-            "time": "2021-07-18T11:31:14+00:00"
+            "time": "2021-09-17T23:03:01+00:00"
         },
         {
             "name": "medcenter24/mc-doctor-gui",
@@ -3798,16 +3798,16 @@
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0"
+                "reference": "30f38bffc6f24293dadd1823936372dfa9e86e2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0",
-                "reference": "6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/30f38bffc6f24293dadd1823936372dfa9e86e2f",
+                "reference": "30f38bffc6f24293dadd1823936372dfa9e86e2f",
                 "shasum": ""
             },
             "require": {
@@ -3815,7 +3815,8 @@
                 "phpdocumentor/reflection-common": "^2.0"
             },
             "require-dev": {
-                "ext-tokenizer": "*"
+                "ext-tokenizer": "*",
+                "psalm/phar": "^4.8"
             },
             "type": "library",
             "extra": {
@@ -3841,9 +3842,9 @@
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "support": {
                 "issues": "https://github.com/phpDocumentor/TypeResolver/issues",
-                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.4.0"
+                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.5.0"
             },
-            "time": "2020-09-17T18:55:26+00:00"
+            "time": "2021-09-17T15:28:14+00:00"
         },
         {
             "name": "phpoffice/phpspreadsheet",
@@ -9914,23 +9915,23 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.6",
+            "version": "9.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "f6293e1b30a2354e8428e004689671b83871edde"
+                "reference": "d4c798ed8d51506800b441f7a13ecb0f76f12218"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f6293e1b30a2354e8428e004689671b83871edde",
-                "reference": "f6293e1b30a2354e8428e004689671b83871edde",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d4c798ed8d51506800b441f7a13ecb0f76f12218",
+                "reference": "d4c798ed8d51506800b441f7a13ecb0f76f12218",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
                 "ext-xmlwriter": "*",
-                "nikic/php-parser": "^4.10.2",
+                "nikic/php-parser": "^4.12.0",
                 "php": ">=7.3",
                 "phpunit/php-file-iterator": "^3.0.3",
                 "phpunit/php-text-template": "^2.0.2",
@@ -9979,7 +9980,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.6"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.7"
             },
             "funding": [
                 {
@@ -9987,7 +9988,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-28T07:26:59+00:00"
+            "time": "2021-09-17T05:39:03+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -12051,7 +12052,11 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=8.0",
+        "ext-dom": "*",
+        "ext-imagick": "*"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
 }

@@ -37,7 +37,7 @@ run:
 	docker-compose -f ./Docker/docker-compose.yaml up -d mc-doctor-watch-nginx
 	# Director Prod Dist
 	docker-compose -f ./Docker/docker-compose.yaml up -d mc-director-dist-nginx
-# todo director & doctor stable prod versions
+# todo doctor stable prod versions
 # mailhog for docker development
 
 stop:
