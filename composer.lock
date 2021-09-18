@@ -2769,12 +2769,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/medcenter24/mc-director-gui.git",
-                "reference": "1de1b16750485f04503f5de09d7b1ea51c3c49c7"
+                "reference": "c2241d744748e1d9091285dc974779953daad8d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/medcenter24/mc-director-gui/zipball/1de1b16750485f04503f5de09d7b1ea51c3c49c7",
-                "reference": "1de1b16750485f04503f5de09d7b1ea51c3c49c7",
+                "url": "https://api.github.com/repos/medcenter24/mc-director-gui/zipball/c2241d744748e1d9091285dc974779953daad8d8",
+                "reference": "c2241d744748e1d9091285dc974779953daad8d8",
                 "shasum": ""
             },
             "require": {
@@ -2797,7 +2797,7 @@
                 "issues": "https://github.com/medcenter24/mc-director-gui/issues",
                 "source": "https://github.com/medcenter24/mc-director-gui/tree/develop"
             },
-            "time": "2021-09-17T23:03:01+00:00"
+            "time": "2021-09-18T09:37:55+00:00"
         },
         {
             "name": "medcenter24/mc-doctor-gui",

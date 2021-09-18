@@ -9,7 +9,7 @@ build:
 	docker exec -it mc-build yarn --cwd /var/www/html/mcCore
 	docker exec -it mc-build yarn --cwd /var/www/html/mcCore run dev
 	docker exec -it mc-build chown 1000:1000 -R /var/www/html
-	docker exec -e APP_CONFIG_PATH=/var/www/html/appSettings/config/generis.conf.php -it mc-build /usr/local/bin/php mcCore/artisan setup:seed /var/www/html/seed.json
+	docker exec -e APP_CONFIG_PATH=/var/www/html/appSettings/config/generis.conf.php -it mc-build /usr/local/bin/php mcCore/artisan setup:seed /var/www/html/seed.json --force
 	docker exec -it mc-build chown 1000:1000 -R /var/www/html/appSettings
 	docker exec -it mc-build chmod ugo+xrw -R /var/www/html/appSettings
 	docker exec -it mc-build chown 1000:1000 -R /var/www/html/settings
