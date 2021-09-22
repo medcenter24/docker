@@ -2688,12 +2688,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/medcenter24/mc-core.git",
-                "reference": "f3e7aca0aa72213400f7bc3c55771db8ff8c867d"
+                "reference": "22675ec7ebc60b24bfb28affb92e9462667ff290"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/medcenter24/mc-core/zipball/f3e7aca0aa72213400f7bc3c55771db8ff8c867d",
-                "reference": "f3e7aca0aa72213400f7bc3c55771db8ff8c867d",
+                "url": "https://api.github.com/repos/medcenter24/mc-core/zipball/22675ec7ebc60b24bfb28affb92e9462667ff290",
+                "reference": "22675ec7ebc60b24bfb28affb92e9462667ff290",
                 "shasum": ""
             },
             "require": {
@@ -2712,7 +2712,7 @@
                 "laravel/ui": "^3.3",
                 "maatwebsite/excel": "^3.1.19",
                 "medcenter24/lib-installer": "^2.0.1",
-                "mpdf/mpdf": "~8.0.6",
+                "mpdf/mpdf": "~8.0.13",
                 "nwidart/laravel-modules": "^8.2",
                 "php": ">=8.0",
                 "spatie/laravel-medialibrary": "^9.6",
@@ -2761,7 +2761,7 @@
                 "issues": "https://github.com/medcenter24/mc-core/issues",
                 "source": "https://github.com/medcenter24/mc-core/tree/develop"
             },
-            "time": "2021-09-17T23:04:57+00:00"
+            "time": "2021-09-19T18:43:38+00:00"
         },
         {
             "name": "medcenter24/mc-director-gui",
@@ -2769,12 +2769,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/medcenter24/mc-director-gui.git",
-                "reference": "c2241d744748e1d9091285dc974779953daad8d8"
+                "reference": "42bd13669569deccca3906aa70db2e24c796397f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/medcenter24/mc-director-gui/zipball/c2241d744748e1d9091285dc974779953daad8d8",
-                "reference": "c2241d744748e1d9091285dc974779953daad8d8",
+                "url": "https://api.github.com/repos/medcenter24/mc-director-gui/zipball/42bd13669569deccca3906aa70db2e24c796397f",
+                "reference": "42bd13669569deccca3906aa70db2e24c796397f",
                 "shasum": ""
             },
             "require": {
@@ -2797,7 +2797,7 @@
                 "issues": "https://github.com/medcenter24/mc-director-gui/issues",
                 "source": "https://github.com/medcenter24/mc-director-gui/tree/develop"
             },
-            "time": "2021-09-18T09:37:55+00:00"
+            "time": "2021-09-20T08:03:06+00:00"
         },
         {
             "name": "medcenter24/mc-doctor-gui",
@@ -3352,20 +3352,20 @@
         },
         {
             "name": "nette/utils",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "5c36cc1ba9bb6abb8a9e425cf054e0c3fd5b9822"
+                "reference": "8b90ef7f5d02df449e632aff4d4a3ba5fc5b4312"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/5c36cc1ba9bb6abb8a9e425cf054e0c3fd5b9822",
-                "reference": "5c36cc1ba9bb6abb8a9e425cf054e0c3fd5b9822",
+                "url": "https://api.github.com/repos/nette/utils/zipball/8b90ef7f5d02df449e632aff4d4a3ba5fc5b4312",
+                "reference": "8b90ef7f5d02df449e632aff4d4a3ba5fc5b4312",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2 <8.1"
+                "php": ">=7.2 <8.2"
             },
             "conflict": {
                 "nette/di": "<3.0.6"
@@ -3431,9 +3431,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v3.2.3"
+                "source": "https://github.com/nette/utils/tree/v3.2.4"
             },
-            "time": "2021-08-16T21:05:00+00:00"
+            "time": "2021-09-19T23:30:35+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -9264,16 +9264,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.14.1",
+            "version": "2.14.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "15ead64e9828f0fc90932114429c4f7923570cb1"
+                "reference": "89584ce67dd32307f1063cc43846674f4679feda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/15ead64e9828f0fc90932114429c4f7923570cb1",
-                "reference": "15ead64e9828f0fc90932114429c4f7923570cb1",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/89584ce67dd32307f1063cc43846674f4679feda",
+                "reference": "89584ce67dd32307f1063cc43846674f4679feda",
                 "shasum": ""
             },
             "require": {
@@ -9323,7 +9323,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.14.1"
+                "source": "https://github.com/filp/whoops/tree/2.14.3"
             },
             "funding": [
                 {
@@ -9331,7 +9331,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-08-29T12:00:00+00:00"
+            "time": "2021-09-19T12:00:00+00:00"
         },
         {
             "name": "fzaninotto/faker",
