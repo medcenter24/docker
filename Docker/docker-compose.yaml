@@ -104,7 +104,7 @@ services:
     networks:
       - medcenter24-network
     volumes:
-      - ../:/var/www/html:cached
+      - $PWD/../:/var/www/html:cached
     working_dir: /var/www/html
 
   mc-postgres:
