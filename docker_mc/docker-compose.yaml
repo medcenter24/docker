@@ -144,7 +144,6 @@ services:
       - medcenter24-network
       - traefik-public
     volumes:
-      - ..:/var/www/html:cached
       - ./nginx/mc-director-watch.nginx.conf:/etc/nginx/conf.d/default.conf:cached
     working_dir: /etc/nginx/conf.d
     labels:
